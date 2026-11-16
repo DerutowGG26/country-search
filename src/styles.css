@@ -40,3 +40,23 @@ input {
   display: grid;
   gap: 16px;
 }
+
+.country-card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.country-flag {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.country-card h2 {
+  margin: 0 0 12px;
+}
+
+.country-card p {
+  margin: 6px 0;
+}

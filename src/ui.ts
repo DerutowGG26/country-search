@@ -4,7 +4,7 @@ export interface AppElements {
   results: HTMLDivElement;
 }
 
-export function creatAppUI(): AppElements {
+export function createAppUI(): AppElements {
   const main = document.createElement('main');
   main.className = 'container';
 
