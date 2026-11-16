@@ -1,6 +1,10 @@
 import type { Country } from './mapCountryResponse.js';
 
-export function renderCountries(container: HTMLDivElement, countries: Country[]): void {
+export function renderCountries(
+  container: HTMLDivElement,
+  countries: Country[],
+  onSelect: (country: Country) => void,
+): void {
   container.replaceChildren();
 
   countries.forEach((country) => {
@@ -23,7 +27,13 @@ export function renderCountries(container: HTMLDivElement, countries: Country[])
     const population = document.createElement('p');
     population.textContent = `Population: ${country.population.toLocaleString()}`;
 
-    card.append(flag, name, capital, region, population);
+    const detailsButton = document.createElement('button');
+    detailsButton.textContent = 'View details';
+    detailsButton.addEventListener('click', () => {
+      onSelect(country);
+    });
+
+    card.append(flag, name, capital, region, population, detailsButton);
     container.append(card);
   });
 }
